@@ -21,7 +21,7 @@ public class NumberGuessingGame {
                 int number = random.nextInt(100) + 1;
                 int maxAttempt = 3;
                 int attempt = 0;
-                int score = 0;
+                int score;
 
                 System.out.println("Round " + round);
                 while (true) {
@@ -67,7 +67,7 @@ public class NumberGuessingGame {
         }while(playAgain);
         System.out.println(" Game Over! ");
         System.out.println(" Your Total Score is " + totalScore);
-        Long totalTime = System.currentTimeMillis();
+        long totalTime = System.currentTimeMillis();
         System.out.println("You finished this game in " + totalTime + " ms ");
 
     }
