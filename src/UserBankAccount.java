@@ -13,18 +13,20 @@ public class UserBankAccount {
     public void withdraw(){
         int withdrawAmount=sc.nextInt();
          if (withdrawAmount <= 0 || withdrawAmount > accountBalance) {
-            System.out.println("Invalid amount.");
+            System.out.println("Transaction Failed! Invalid amount");
             return;
         }
         accountBalance-=withdrawAmount;
+        System.out.println("Successful transaction");
     }
     public void deposit(){
         int depositAmount=sc.nextInt();
         if (depositAmount <= 0) {
-            System.out.println("Invalid amount.");
+            System.out.println("Transaction Failed! Invalid amount");
             return;
         }
         accountBalance+=depositAmount;
+        System.out.println("Successful transaction");
     }
     public int checkBalance(){
         return accountBalance;
