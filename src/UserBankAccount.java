@@ -17,7 +17,7 @@ public class UserBankAccount {
             return;
         }
         accountBalance-=withdrawAmount;
-        System.out.println("Successful transaction");
+        System.out.println("Transaction Successful");
     }
     public void deposit(){
         int depositAmount=sc.nextInt();
