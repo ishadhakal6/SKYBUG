@@ -8,7 +8,7 @@ public class NumberGuessingGame {
 
         System.out.println("Welcome to Number Guessing Game!");
         System.out.println("Rules ");
-        System.out.println("1. You have 3 attempts.");
+        System.out.println("1. You have 5 attempts.");
         System.out.println("2. If you mastered in 1st attempt, you have 100 points.Else, you have 50 points.");
 
 
@@ -16,10 +16,11 @@ public class NumberGuessingGame {
         boolean playAgain;
         do {
             playAgain = false;
-            for (int round = 1; round <= 3; round++) {
+            int round;
+            for (round = 1; round <= 3; round++) {
                 Random random = new Random();
                 int number = random.nextInt(100) + 1;
-                int maxAttempt = 3;
+                int maxAttempt = 5;
                 int attempt = 0;
                 int score;
 
@@ -57,18 +58,22 @@ public class NumberGuessingGame {
                     }
 
                 }
+            }
+            System.out.println(" Game Over! ");
+            System.out.println(" Your Total Score is " + totalScore);
+            long totalTime = System.currentTimeMillis();
+            System.out.println("You finished this game in " + totalTime + " ms ");
+
+            if (round > 3) {
                 System.out.println(" Do you want to play again? (yes/no) ");
                 String playAgainInput = sc.next();
                 if (playAgainInput.equalsIgnoreCase("yes")) {
                     playAgain = true;
                 }
-
             }
-        }while(playAgain);
-        System.out.println(" Game Over! ");
-        System.out.println(" Your Total Score is " + totalScore);
-        long totalTime = System.currentTimeMillis();
-        System.out.println("You finished this game in " + totalTime + " ms ");
+        }while (playAgain);
+        sc.close();
+
 
     }
 }
